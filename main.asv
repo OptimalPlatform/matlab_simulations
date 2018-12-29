@@ -1,0 +1,26 @@
+% Script for kalman 1D, 2D, 3D and 4D. 
+
+decide_parameters;
+
+create_signal;
+
+filter = '1';
+
+switch which_filter
+    case 1
+        initialize_matrices_1D;
+        kalman_filter_1D;
+    case 2
+        initialize_matrices_2D;
+        kalman_filter_2D;
+    case 3
+        initialize_matrices_3D;
+        kalman_filter_3D;
+    case 4
+        initialize_matrices_4D;
+        kalman_filter_4D;
+    otherwise
+        disp('No filter choosen')
+end 
+
+plot_data;
